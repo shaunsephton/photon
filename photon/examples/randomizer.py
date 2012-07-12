@@ -8,10 +8,9 @@ from photon import Client, constants
 
 client = Client(
     server="http://localhost:8000/",
-    project="sample",
-    api_key="12345",
+    api_key="123456789",
 )
 
 while True:
-    client.send(("random", random.randint(100, 999),), metric_slug='randomizer', timestamp=datetime.now(), interval=constants.MINUTE)
-    time.sleep(60)
+    client.send(("random", random.randint(100, 999),), metric_id='1', timestamp=datetime.now(), interval=constants.MINUTE)
+    time.sleep(5)
