@@ -12,7 +12,7 @@ class Client(object):
         self.server = server
         self.api_key = api_key
 
-    def send(self, samples, metric_id, timestamp, interval):
+    def send(self, samples, timestamp, interval):
         """
         Sends encoded data via HTTP.
         """
@@ -20,7 +20,6 @@ class Client(object):
         if isinstance(samples[0], basestring):
             samples = (samples,)
         data = self.encode({
-            'metric_id': metric_id,
             'api_key': self.api_key,
             'samples': samples,
             'timestamp': datetime.strftime(timestamp, '%Y-%m-%d %H:%M:%S'),

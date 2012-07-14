@@ -12,5 +12,5 @@ client = Client(
 )
 
 while True:
-    client.send(("random", random.randint(100, 999),), metric_id='1', timestamp=datetime.now(), interval=constants.MINUTE)
-    time.sleep(5)
+    client.send(("random", random.randint(100, 999),), timestamp=datetime.now(), interval=constants.MINUTE)
+    time.sleep(2)
