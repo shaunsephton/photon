@@ -12,5 +12,11 @@ client = Client(
 )
 
 while True:
-    client.send(("random", random.randint(100, 999),), timestamp=datetime.now(), interval=constants.MINUTE)
+    client.send((
+        ("Group 1", random.randint(100, 999)),
+        ("Group 2", random.randint(100, 999)),
+        ("Group 3", random.randint(100, 999)),
+        ("Group 4", random.randint(100, 999)),
+        ("Group 5", random.randint(100, 999)),
+    ), timestamp=datetime.now(), interval=constants.MINUTE)
     time.sleep(2)
