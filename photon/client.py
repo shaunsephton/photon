@@ -6,12 +6,12 @@ import urlparse
 
 class Client(object):
     """
-    Some of this code was stolen from Raven/Sentry.
+    Some of this code taken from Raven/Sentry.
     """
     def __init__(self, server):
         self.server = server
 
-    def send(self, api_key, samples, timestamp, interval):
+    def send(self, api_key, samples, timestamp):
         """
         Sends encoded data via HTTP.
         """
@@ -22,7 +22,6 @@ class Client(object):
             'api_key': api_key,
             'samples': samples,
             'timestamp': datetime.strftime(timestamp, '%Y-%m-%d %H:%M:%S'),
-            'interval': interval,
         })
         headers = {
             'Content-Type': 'application/octet-stream',
