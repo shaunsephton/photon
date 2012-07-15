@@ -8,19 +8,18 @@ class Client(object):
     """
     Some of this code was stolen from Raven/Sentry.
     """
-    def __init__(self, server, api_key):
+    def __init__(self, server):
         self.server = server
-        self.api_key = api_key
 
-    def send(self, samples, timestamp, interval):
+    def send(self, api_key, samples, timestamp, interval):
         """
         Sends encoded data via HTTP.
         """
-        # Samples should be iterable in iterable.
+        # Samples should be iterable in iterable but not string.
         if isinstance(samples[0], basestring):
             samples = (samples,)
         data = self.encode({
-            'api_key': self.api_key,
+            'api_key': api_key,
             'samples': samples,
             'timestamp': datetime.strftime(timestamp, '%Y-%m-%d %H:%M:%S'),
             'interval': interval,
