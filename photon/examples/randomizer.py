@@ -29,7 +29,7 @@ while True:
         api_key='2', 
         timestamp=datetime.now(),
     )
-    # Push random data to a standard deviation metric.
+    # Push random data to a sample deviation metric.
     client.send(
         samples=(("Indicator", random.randint(100, 999)),), 
         api_key='3', 
