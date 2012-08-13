@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='photon',
-    version='0.0.2',
+    version='0.0.3',
     description='Photon is a Python client library for Holodeck.',
     long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Shaun Sephton',
