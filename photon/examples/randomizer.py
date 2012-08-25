@@ -13,8 +13,8 @@ client = Client(
 while True:
     # Push random data to a single line chart metric.
     client.send(
-        samples=(("Indicator", random.randint(100, 999)),), 
-        api_key='1', 
+        samples=(("Indicator", random.randint(100, 999)),),
+        api_key='1',
         timestamp=datetime.now(),
     )
     # Push random data to a multi-line chart metric.
@@ -25,14 +25,14 @@ while True:
             ("Line 3", random.randint(100, 999)),
             ("Line 4", random.randint(100, 999)),
             ("Line 5", random.randint(100, 999)),
-        ), 
-        api_key='2', 
+        ),
+        api_key='2',
         timestamp=datetime.now(),
     )
     # Push random data to a sample deviation metric.
     client.send(
-        samples=(("Indicator", random.randint(100, 999)),), 
-        api_key='3', 
+        samples=(("Indicator", random.randint(100, 999)),),
+        api_key='3',
         timestamp=datetime.now(),
     )
     # Push random data to a pie chart metric.
@@ -43,8 +43,27 @@ while True:
             ("Slice 3", random.randint(100, 999)),
             ("Slice 4", random.randint(100, 999)),
             ("Slice 5", random.randint(100, 999)),
-        ), 
-        api_key='4', 
+        ),
+        api_key='4',
+        timestamp=datetime.now(),
+    )
+    # Push random data to a single gage metric.
+    client.send(
+        samples=(
+            ("Gage 1", random.randint(100, 999)),
+        ),
+        api_key='5',
+        timestamp=datetime.now(),
+    )
+    # Push random data to a multi gage metric.
+    client.send(
+        samples=(
+            ("Gage 1", random.randint(100, 999)),
+            ("Gage 2", random.randint(100, 999)),
+            ("Gage 3", random.randint(100, 999)),
+            ("Gage 4", random.randint(100, 999)),
+        ),
+        api_key='6',
         timestamp=datetime.now(),
     )
     time.sleep(2)
