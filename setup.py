@@ -9,6 +9,9 @@ setup(
     author_email='shaun@28lines.com',
     url='http://github.com/shaunsephton/photon',
     packages = find_packages(),
+    install_requires = [
+        'simplejson',
+    ],
     include_package_data=True,
     classifiers=[
         "Programming Language :: Python",
