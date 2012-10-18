@@ -1,6 +1,9 @@
 import base64
 from datetime import datetime
-import json
+try:
+    import json
+except ImportError:
+    import simplejson as json
 import urllib2
 import urlparse
 
