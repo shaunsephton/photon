@@ -1,3 +1,4 @@
 *.pyc
 *.egg-info/
 /ve/
+/_trial_temp/

@@ -1,8 +1,7 @@
 import urlparse
 from datetime import datetime
 from twisted.web.client import getPage
-from twisted.web.http_headers import Headers
-from phonon.client import Client
+from photon.client import Client
 
 
 class TxClient(Client):
@@ -26,4 +25,4 @@ class TxClient(Client):
             'Content-Type': ['application/octet-stream'],
         }
         url = urlparse.urljoin(self.server, '/api/store/')
-        return getPage(url, headers=Headers(headers), postdata=data)
+        return getPage(url, method='POST', headers=headers, postdata=data)
