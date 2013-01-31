@@ -2,15 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name='photon',
-    version='0.0.4',
+    version='0.0.5',
     description='Photon is a Python client library for Holodeck.',
-    long_description = open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
+    long_description=open('README.rst', 'r').read() + open('AUTHORS.rst', 'r').read() + open('CHANGELOG.rst', 'r').read(),
     author='Shaun Sephton',
     author_email='shaun@28lines.com',
     url='http://github.com/shaunsephton/photon',
-    packages = find_packages(),
-    install_requires = [
+    packages=find_packages(),
+    install_requires=[
         'simplejson',
+        'twisted',
     ],
     include_package_data=True,
     classifiers=[
